@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.zombietank">
+	<logger name="net.tomhermann">
 		<level value="debug" />
 	</logger>
 

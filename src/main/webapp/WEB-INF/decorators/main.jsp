@@ -6,7 +6,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><decorator:title default="zombietank.com" /></title>
+    <title><decorator:title default="Tom Hermann" /></title>
     <meta name="author" content="Tom Hermann">
     <meta name="description" content="Somewhere around the intersection of zombies and tanks.">
 
@@ -25,11 +25,7 @@
       }
     </style>
 
-	<!-- favicons -->
-    <link rel="shortcut icon" href="<c:url value="/resources/img/favicon.ico?v02" />">
-    <link rel="apple-touch-icon" href="<c:url value="/resources/img/apple-touch-icon.png" />">
-    <link rel="apple-touch-icon" sizes="72x72" href="<c:url value="/resources/img/apple-touch-icon-72x72.png" />">
-    <link rel="apple-touch-icon" sizes="114x114" href="<c:url value="/resources/img/apple-touch-icon-114x114.png" />">
+    <link rel="shortcut icon" href="<c:url value="/resources/img/favicon.ico?v03" />">
 	<decorator:head />
   </head>
 
@@ -37,31 +33,19 @@
     <div class="topbar">
 		<div class="fill">
 			<div class="container">
-				<a class="brand" href="<c:url value="/" />">zombietank</a>
+				<a class="brand" href="<c:url value="/" />" title="Home">Tom Hermann</a>
 				<ul class="nav">
-					<li><a href="<c:url value="/" />">Home</a></li>
-					<li><a href="<c:url value="/contact" />">Contact</a></li>
-					<sec:authorize ifAnyGranted="ROLE_SUPERVISOR">
-						<li><a href="<c:url value="/configure-me" />">Admin</a></li>
-					</sec:authorize>
+					<li><a href="https://github.com/tomhermann" title="github.com/tomhermann">Projects</a></li>
+					<li><a href="<c:url value="/resources/files/tom-hermann-resume.docx" />" title="My résumé">Résumé</a></li>
+					<li><a href="<c:url value="/contact" />" title="Contact me">Contact</a></li>
 				</ul>
-				<sec:authorize ifAnyGranted="ROLE_ANONYMOUS">
-	                <ul class="nav secondary-nav">
-						<li><a href="<c:url value="/login" />">Login</a></li>
-					</ul>
-		        </sec:authorize>
-		        <sec:authorize ifNotGranted="ROLE_ANONYMOUS">
-	                <ul class="nav secondary-nav">
-						<li><a href="<c:url value="/logout" />">Logout</a></li>
-					</ul>
-		        </sec:authorize>
 			</div>
 		</div>
 	</div>
     <div class="container">
 	  <decorator:body />
       <footer>
-        <p>&copy; zombietank.com <%= Calendar.getInstance().get(Calendar.YEAR) %></p>
+        <p>&copy; tomhermann.net <%= Calendar.getInstance().get(Calendar.YEAR) %></p>
       </footer>
     </div>
   </body>

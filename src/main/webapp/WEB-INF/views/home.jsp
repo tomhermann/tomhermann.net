@@ -1,39 +1,23 @@
-<%@ page session="false" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ page session="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <head>
-	<title>zombietank.com - Home</title>
+<title>Tom Hermann</title>
 </head>
 
 <div class="hero-unit">
 	<div class="row">
 		<div class="span7">
-			<h1>Braaaiiinnss!</h1>
-			<p>Watch out, zombies are hungry for your brain.</p>
-			<p>
-				<a class="btn primary large">Learn more &raquo;</a>
-			</p>
+			<h2>Developer. Geek. Gamer.</h2>
+			<p>Hello, my name is Tom. I am a software developer currently residing in <a href="http://en.wikipedia.org/wiki/Columbia,_Missouri">Columbia, Missouri</a>.</p>
+			<p>If you are interested in learning more about me: check out my github projects, my resume, or contact me.</p>
+			<a href="http://twitter.com/tomhermann"><img src="<c:url value="/resources/img/twitter.png"/>" alt="Twitter" title="Twitter" /></a>
+			<a href="http://www.facebook.com/tomhermann"><img src="<c:url value="/resources/img/facebook.png" />" alt="Facebook" title="Facebook" /></a>
+			<a href="<c:url value="/contact" />"><img src="<c:url value="/resources/img/gmail.png" />" alt="Email" title="Email" /></a>
+			<a href="http://www.youtube.com/user/tom1432"><img src="<c:url value="/resources/img/youtube.png" />" alt="YouTube" title="YouTube"/></a>
 		</div>
 		<div class="pull-right">
-			<img alt="Zombie! Ah!" src="<c:url value="/resources/img/Zombie-icon.png" />">
+			<img alt="Tom Hermann" src="<c:url value="/resources/img/me.png" />" width="256px" height="256px">
 		</div>
-	</div>
-</div>
-
-<div class="row">
-	<div class="span-one-third">
-		<h2>Zombie Patrol</h2>
-		<p>We offer a variety of zombie protection services, at the industries lowest rates per kill!</p>
-		<p>
-			<a class="btn" href="#">View details &raquo;</a>
-		</p>
-	</div>
-	<div class="span-one-third">
-		<h2>Emergency Response</h2>
-		<p>Bitten by a zombie? Need someone to put you down? We offer this exclusive service to our paying 
-		members. No credit? No problem! Sign up today and pay only $19.99/month!</p>
-		<p>
-			<a class="btn" href="#">View details &raquo;</a>
-		</p>
 	</div>
 </div>
