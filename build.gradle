@@ -34,7 +34,7 @@ dependencies {
 		'javax.validation:validation-api:1.0.0.GA',
 		'org.hibernate:hibernate-validator:4.2.0.Final',
 		'org.codehaus.jackson:jackson-mapper-asl:1.8.3',
-		'javax.mail:mail:1.4.1',
+		'javax.mail:mail:1.4.4',
 		'org.apache.velocity:velocity:1.7',
 		'javax.servlet:jstl:1.2',
 		'opensymphony:sitemesh:2.4.2'
