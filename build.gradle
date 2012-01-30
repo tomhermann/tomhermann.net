@@ -12,7 +12,7 @@ configurations {
 }
 
 group = 'net.tomhermann'
-version = '0.1.5.RELEASE'
+version = '0.0.2.RELEASE'
 sourceCompatibility = 1.6
 targetCompatibility = sourceCompatibility
 springVersion = '3.1.0.RELEASE'
