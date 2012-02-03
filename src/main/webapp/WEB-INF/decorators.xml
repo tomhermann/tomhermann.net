@@ -5,5 +5,4 @@
     <decorator name="main" page="main.jsp">
        <pattern>/*</pattern>
     </decorator>
-    <decorator name="printable" page="printable.jsp" />
 </decorators>
