@@ -10,6 +10,7 @@ import java.util.Map;
 
 import javax.mail.internet.InternetAddress;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
 import org.springframework.core.io.Resource;
 
 public class Email implements Serializable {
@@ -203,28 +204,20 @@ public class Email implements Serializable {
 	public void setHtml(boolean html) {
 		this.html = html;
 	}
-
-	/***
-	 * Custom toString. Roo wasn't handling list fields quite like I'd hope.
-	 */
+	
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Attachments: ")
-				.append(getAttachments() == null ? "null" : getAttachments()
-						.toString()).append(", ");
-		sb.append("To: ").append(getTo() == null ? "null" : getTo())
-				.append(", ");
-		sb.append("From: ").append(getFrom()).append(", ");
-		sb.append("ReplyTo: ").append(getReplyTo()).append(", ");
-		sb.append("Bcc: ").append(getBcc() == null ? "null" : getBcc())
-				.append(", ");
-		sb.append("Cc: ").append(getCc() == null ? "null" : getCc())
-				.append(", ");
-		sb.append("Priority: ").append(getPriority()).append(", ");
-		sb.append("Subject: ").append(getSubject()).append(", ");
-		sb.append("Message: ").append(getMessage()).append(", ");
-		sb.append("Html: ").append(isHtml());
-		return sb.toString();
+		return new ToStringBuilder(this)
+			.append("To", to)
+			.append("From", from)
+			.append("ReplyTo", replyTo)
+			.append("Cc", cc)
+			.append("Bcc", bcc)
+			.append("Subject", subject)
+			.append("Priority", priority)
+			.append("Message", message)
+			.append("Is html", html)
+			.append("Attachments", attachments)
+			.append("Headers", headers)
+		.toString();
 	}
-
 }

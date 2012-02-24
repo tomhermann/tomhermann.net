@@ -29,5 +29,4 @@ public class ContactController {
 		redirectAttributes.addFlashAttribute("success", "Message has been sent!");
 		return "redirect:/contact";
 	}
-
 }

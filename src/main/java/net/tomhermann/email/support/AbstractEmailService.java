@@ -7,7 +7,6 @@ import java.util.Map;
 import net.tomhermann.email.Email;
 import net.tomhermann.email.EmailService;
 
-
 /***
  * Starter e-mail service for template engines that use maps.
  */
