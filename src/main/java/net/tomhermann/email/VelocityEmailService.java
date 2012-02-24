@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.scheduling.annotation.Async;
 
-
 public class VelocityEmailService extends AbstractEmailService {
 	private static final Logger log = LoggerFactory.getLogger(VelocityEmailService.class);
 	private final JavaMailSender mailSender;
