@@ -4,19 +4,19 @@ import javax.mail.internet.InternetAddress;
 
 public final class InternetAddressBuilder {
 
-	public static InternetAddress newAddress(String address) {
+	public static InternetAddress newAddress(final String address) {
 		try {
 			return new InternetAddress(address);
 		} catch (Exception e) {
-			throw new AddressException(e);
+			throw new AddressException(address, e);
 		}
 	}
 
-	public static InternetAddress newAddress(String address, String personal) {
+	public static InternetAddress newAddress(final String address, final String personal) {
 		try {
 			return new InternetAddress(address, personal);
 		} catch (Exception e) {
-			throw new AddressException(e);
+			throw new AddressException(address, e);
 		}
 	}
 	
