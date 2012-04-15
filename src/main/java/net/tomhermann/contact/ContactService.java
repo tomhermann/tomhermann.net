@@ -1,11 +1,12 @@
 package net.tomhermann.contact;
 
-import net.tomhermann.email.Email;
-import net.tomhermann.email.EmailService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
+
+import com.zombietank.email.Email;
+import com.zombietank.email.EmailService;
+import com.zombietank.email.exception.EmailException;
 
 @Service
 public class ContactService {
@@ -18,7 +19,7 @@ public class ContactService {
 		this.environment = environment;
 	}
 
-	public void process(ContactForm message) {
+	public void process(ContactForm message) throws EmailException {
 		Email email = new Email()
 						.to(environment.getProperty("contact.email"), 
 							environment.getProperty("contact.name"))
