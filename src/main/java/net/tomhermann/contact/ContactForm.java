@@ -4,9 +4,10 @@ import java.io.Serializable;
 
 import javax.validation.constraints.Size;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+
+import com.google.common.base.Objects;
 
 public class ContactForm implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -58,11 +59,11 @@ public class ContactForm implements Serializable {
 	}
 
 	public String toString() {
-		return new ToStringBuilder(this)
-				.append("Email", email)
-				.append("Message", message)
-				.append("Name", name)
-				.append("Subject", subject)
+		return Objects.toStringHelper(this)
+				.add("Email", email)
+				.add("Message", message)
+				.add("Name", name)
+				.add("Subject", subject)
 			.toString();
 	}
 }
