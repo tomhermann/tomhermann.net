@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="span7">
 			<h2>Developer. Geek. Gamer.</h2>
-			<p>Hello, my name is Tom. I am a software developer currently residing in <a href="http://en.wikipedia.org/wiki/Columbia,_Missouri">Columbia, Missouri</a>.</p>
+			<p>Hello, my name is Tom. I am a software developer currently residing in <a href="http://en.wikipedia.org/wiki/St._Louis">Saint Louis, Missouri</a>.</p>
 			<p>If you are interested in learning more about me: check out my github projects, my resume, or contact me.</p>
 			<a href="http://twitter.com/tomhermann"><img src="<c:url value="/resources/img/twitter.png"/>" alt="Twitter" title="Twitter" /></a>
 			<a href="http://www.facebook.com/tomhermann"><img src="<c:url value="/resources/img/facebook.png" />" alt="Facebook" title="Facebook" /></a>
