@@ -1,73 +1,51 @@
-apply plugin: 'war'
-apply plugin: 'jetty'
-apply plugin: 'maven'
+buildscript {
+    ext {
+        springBootVersion = '1.2.5.RELEASE'
+    }
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+        classpath("io.spring.gradle:dependency-management-plugin:0.5.1.RELEASE")
+    }
+}
+
+apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'eclipse-wtp'
+apply plugin: 'idea'
+apply plugin: 'spring-boot' 
+apply plugin: 'io.spring.dependency-management' 
 
-repositories { 
-	maven {
-		url "http://iheartsoftware.com/nexus/content/groups/public/"
-	}
+jar {
+    baseName = 'tomhermann.net'
+    version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
 }
 
-configurations {
-	all*.exclude group: "commons-logging", module: "commons-logging"
-}
-
-sourceCompatibility = 1.6
-targetCompatibility = sourceCompatibility
 
 dependencies {
-	compile (
-		'javax.inject:javax.inject:1',
-		"org.springframework:spring-webmvc:${springVersion}",
-		"org.springframework:spring-aspects:${springVersion}",
-		"org.springframework.security:spring-security-web:${springSecurityVersion}",
-		"org.springframework.security:spring-security-taglibs:${springSecurityVersion}",
-		"org.springframework.security:spring-security-config:${springSecurityVersion}",
-		'org.aspectj:aspectjrt:1.7.0',
-		'cglib:cglib:2.2.2',
-		"org.slf4j:slf4j-api:${slf4jVersion}",
-		"org.slf4j:jcl-over-slf4j:${slf4jVersion}",
-		"org.slf4j:slf4j-log4j12:${slf4jVersion}",
-		'com.google.guava:guava:r09',
-		'javax.validation:validation-api:1.0.0.GA',
-		'org.hibernate:hibernate-validator:4.2.0.Final',
-		'org.codehaus.jackson:jackson-mapper-asl:1.9.9',
-		'com.zombietank:com.zombietank.email:1.0.3.RELEASE',
-		'javax.servlet:jstl:1.2',
-		'opensymphony:sitemesh:2.4.2'
-	)
-
-	providedCompile (
-		'javax.servlet:servlet-api:2.5',
-		'javax.servlet.jsp:jsp-api:2.1',
-		'javax.persistence:persistence-api:1.0'
-	)
-
-	runtime (
-		'log4j:log4j:1.2.16'
-	)
-
-	testCompile (
-		'junit:junit:4.10',
-		'org.hamcrest:hamcrest-all:1.1',
-		'org.mockito:mockito-all:1.9.0'
-	)
+    compile("org.springframework.boot:spring-boot-starter-groovy-templates")
+    compile("org.springframework.boot:spring-boot-starter-web")
+ 
+    runtime("org.hsqldb:hsqldb")
+ 
+    testCompile("org.springframework.boot:spring-boot-starter-test") 
 }
 
-war {
-	manifest {
-		attributes(
-			"Implementation-Title": rootProject.name, 
-			"Implementation-Version": version
-		)
-	}
-	
-	metaInf {
-		from 'src/main/resources/META-INF'
-	}
+
+eclipse {
+    classpath {
+         containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+         containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+    }
 }
 
-task stage(dependsOn: ['clean', 'install'])
-
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.4'
+}
