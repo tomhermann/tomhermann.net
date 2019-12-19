@@ -1,4 +1,6 @@
-# tomhermann.net
+# tomhermann.me
 My website accessbile via:
-  * https://tomhermann.net
   * https://tomhermann.me
+  * https://tomhermann.net
+  * https://tomhermann.org
+
