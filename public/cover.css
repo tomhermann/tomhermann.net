@@ -28,8 +28,6 @@ html,
 body {
   height: 100%;
   background-color: #333;
-  background-image: url("assets/arch.jpg");
-  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
